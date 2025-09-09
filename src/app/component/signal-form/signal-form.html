@@ -1,0 +1,10 @@
+<p>signal-form works!</p>
+<label>
+  Name:
+  <input type="text" [value]="name()" (input)="updateSignal(name,$event)">
+</label>
+<label>
+  Age:
+  <input type="text" [value]="age()" (input)="updateSignal(age,$event)">
+</label>
+<button (click)="submit()">Submit</button>

@@ -1,0 +1,36 @@
+<div style="width: 100%; height: 100vh; background-color: aliceblue;">
+
+  <form action="" [formGroup]="signInForm" (ngSubmit)="onSubmit()"
+    style="width: 450px;height: 250px;padding: 20px;background-color: rgb(185, 213, 255);border-radius: 8px; display: flex;flex-direction: column; left: 40%; top: 40%;position: relative; gap: 10px;">
+    <div style="justify-content: center;display: flex;position: relative;">Sign In</div>
+    <div style=" display: flex;flex-direction: column;">
+
+      <label for="email">Email</label>
+      <input type="text" formControlName="email">
+      @if (signInForm.get('email')?.invalid && signInForm.get('email')?.touched) {
+      @if (signInForm.get('email')?.errors?.['required']) {
+      <small style="color: red;">Email is required</small>
+      }
+      @if (signInForm.get('email')?.errors?.['email']) {
+      <small style="color: red;">Enter correct email</small>
+      }
+      }
+    </div>
+    <div></div>
+    <label for="password">Password</label>
+    <input type="text" formControlName="password">
+    @if(signInForm.get('password')?.touched && signInForm.get('password')?.invalid){
+    @if (signInForm.get('password')?.errors?.['required']) {
+    <small style="color: red;">Password is required</small>
+    }
+    @if (signInForm.get('password')?.errors?.['minlength']) {
+    <small style="color: red;">Password should have 8 letters</small>
+    }
+    @if (signInForm.get('password')?.errors?.['pattern']) {
+    <small style="color: red;">Password should contains only A-Z, a-z, 0-9</small>
+    }
+    }
+    <button type="submit" [disabled]="signInForm.invalid">Sign In</button>
+  </form>
+
+</div>
