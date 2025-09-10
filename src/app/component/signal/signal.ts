@@ -8,17 +8,20 @@ import { Component, computed, Input, signal, ViewEncapsulation } from '@angular/
   encapsulation: ViewEncapsulation.Emulated
 })
 export class Signal {
-name=signal("arul");
+  name = signal("arul");
   @Input() myInput!: string;
-signalValue = computed(()=>this.name())
-ngOnInit(): void {
-  console.log(this.signalValue(),this.name())
-  this.name.set("bharath");
-  console.log(this.signalValue(),this.name())
-  setTimeout(()=>{
-    console.log(this.myInput);
+  signalValue = computed(() => this.name())
+  ngOnInit(): void {
+    console.log(this.signalValue(), this.name())
+    this.name.set("bharath");
+    console.log(this.signalValue(), this.name())
+    // setTimeout(() => {
+    //   console.log(this.myInput);
 
-  },5000)
+    // }, 5000)
 
-}
+  }
+  ngDoCheck(): void {
+    console.log("signal call");
+  }
 }

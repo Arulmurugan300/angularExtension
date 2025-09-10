@@ -1,3 +1,6 @@
-<p appHostbinding >host works!</p>
-<p id="p1">work aagala</p>
+<!-- <p appHostbinding >host works!</p> -->
+<p id="p1">host works</p> <span>{{count}}</span>
 <button (click)="sendData()">click</button>
+@for (item of count; track $index) {
+{{item}}
+}

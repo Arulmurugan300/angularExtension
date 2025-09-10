@@ -15,26 +15,34 @@ import { SignalForm } from "./component/signal-form/signal-form";
 })
 export class App {
   protected title = 'angularExtension';
-  concept=[
+  concept = [
     {
-      topic : "Component-anotomy",
-      routeUrl : "/ng-content"
+      topic: "Component-anotomy",
+      routeUrl: "/ng-content"
     },
     {
-      topic : "styling",
-      routeUrl : "/ng-content"
+      topic: "styling",
+      routeUrl: "/ng-content"
     },
     {
-      topic : "ng-content",
-      routeUrl : "/ng-content"
+      topic: "ng-content",
+      routeUrl: "/ng-content"
     },
     {
-      topic : "signal",
-      routeUrl : "/ng-content"
+      topic: "signal",
+      routeUrl: "/ng-content"
     },
     {
-      topic : "host",
-      routeUrl : "/ng-content"
+      topic: "host",
+      routeUrl: "/ng-content"
     },
   ]
+
+  ngOnInit(): void {
+    console.log("Roor OnInit call");
+
+  }
+  ngDoCheck(): void {
+    console.log("Root ng Docheck call");
+  }
 }
